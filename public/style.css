@@ -494,10 +494,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   visibility: hidden;
 }
 
-.fixed {
-  position: fixed;
-}
-
 .absolute {
   position: absolute;
 }
@@ -717,10 +713,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .justify-between {
   justify-content: space-between;
-}
-
-.overflow-y-scroll {
-  overflow-y: scroll;
 }
 
 .rounded-md {
@@ -1917,6 +1909,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   .mobile\:px-4 {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  .mobile\:py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 
   .mobile\:py-0 {

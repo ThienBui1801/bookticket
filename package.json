@@ -7,6 +7,7 @@
   "name": "bookticket",
   "description": "",
   "version": "1.0.0",
+  "homepage": "https://thienbui1801.github.io/bookticket/",
   "main": "tailwind-default.config.js",
   "dependencies": {
     "acorn": "^7.4.1",
@@ -41,6 +42,7 @@
     "flag-icons": "^6.1.1",
     "fraction.js": "^4.2.0",
     "function-bind": "^1.1.1",
+    "gh-pages": "^3.2.3",
     "glob-parent": "^6.0.2",
     "has": "^1.0.3",
     "has-flag": "^4.0.0",
@@ -92,7 +94,9 @@
   "scripts": {
     "dev": "npx tailwindcss -i ./src/style.css -o ./public/style.css",
     "watch": "npx tailwindcss --postcss  -i ./src/style.css -o ./public/style.css --watch",
-    "build": "NODE_ENV=production npx tailwindcss --postcss -i ./src/style.css -o ./public/style.css"
+    "build": "NODE_ENV=production npx tailwindcss --postcss -i ./src/style.css -o ./public/style.css",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d public"
   },
   "repository": {
     "type": "git",

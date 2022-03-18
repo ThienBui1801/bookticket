@@ -1,0 +1,253 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.logo {
+  @apply
+  font-bold 
+  text-xl 
+  mr-2 
+  hover:underline 
+  hover:text-blue-400 
+  transition-all
+  tablet:text-white
+}
+
+.nav-list {
+  @apply
+  font-bold 
+  hover:text-blue-400 
+  transition 
+  duration-300 
+  ease-in-out
+  tablet:hover:text-white
+}
+
+.menu-list {
+  @apply
+  flex 
+  items-center 
+  z-20
+  tablet:bg-blue-200
+  tablet:w-screen
+  tablet:h-screen
+  tablet:flex-col 
+  tablet:fixed 
+  tablet:justify-center
+  tablet:items-center
+  tablet:top-1/2 
+  tablet:left-1/2 
+  tablet:transform 
+  tablet:-translate-x-1/2 
+  tablet:-translate-y-1/2
+  mobile:bg-blue-200
+  mobile:w-screen
+  mobile:h-screen
+  mobile:flex-col 
+  mobile:fixed 
+  mobile:justify-center
+  mobile:items-center
+  mobile:top-1/2 
+  mobile:left-1/2 
+  mobile:transform 
+  mobile:-translate-x-1/2 
+  mobile:-translate-y-1/2
+  lg:visible
+  laptop:visible
+}
+
+.banner-title {
+  @apply
+  text-7xl 
+  font-bold 
+  absolute 
+  top-1/2 transform 
+  -translate-y-1/2 
+  mobile:px-4 
+  mobile:text-blue-400
+  mobile:text-5xl
+}
+
+.choose-opt {
+  @apply
+  flex w-2/3 
+  tablet:w-full 
+  mobile:w-full 
+  mobile:flex-col 
+  mobile:items-start 
+  justify-between 
+  items-center mb-5
+}
+
+.btn-book {
+  @apply
+  bg-blue-600 
+  font-bold 
+  text-white 
+  py-2 
+  px-5 
+  rounded-xl 
+  hover:bg-blue-700
+  transition
+  duration-300
+  ease-in-out
+}
+
+.btn-now {
+  @apply
+  bg-white
+  font-bold 
+  text-blue-600 
+  py-2 
+  px-5 
+  w-36
+  rounded-xl
+  transition
+  duration-300
+  ease-in-out
+}
+
+.btn-change {
+  @apply
+  px-8 
+  py-2 
+  rounded-xl 
+  font-bold 
+  text-blue-500 
+  bg-blue-300 
+  hover:bg-blue-600 
+  hover:text-white
+  transition
+  duration-300
+  ease-in-out
+  mobile:px-2
+  laptop:px-2
+}
+
+.btn-choose {
+  @apply
+  font-semibold 
+  py-1 
+  px-4 
+  rounded-2xl 
+  text-orange-500 
+  bg-orange-300 
+  hover:bg-orange-400 
+  hover:text-white
+  transition
+  duration-300
+  ease-in-out
+}
+
+.btn-info {
+  @apply
+  py-2 
+  px-5 
+  rounded-xl 
+  bg-orange-500 
+  hover:bg-orange-600 
+  text-white font-bold 
+  tablet:ml-auto 
+  tablet:mb-6 
+  mobile:ml-auto 
+  mobile:mb-6
+  laptop:px-2
+}
+
+.info-flight {
+  @apply
+  flex 
+  justify-between 
+  items-center 
+  /* tablet:px-10  */
+  tablet:flex-col 
+  tablet:items-start 
+  tablet:my-3 
+  mobile:my-3
+  mobile:px-4
+  mobile:flex-col
+  /* laptop:px-10 */
+}
+
+.info-opt {
+  @apply
+  w-2/5 
+  flex 
+  justify-evenly 
+  py-7 
+  tablet:w-1/2 
+  tablet:justify-start 
+  mobile:justify-start 
+  mobile:w-full
+  laptop:w-2/4
+}
+
+.name-brand {
+  @apply
+  p-4 
+  flex 
+  justify-between 
+  items-center 
+  ml-auto 
+  tablet:flex-col 
+  tablet:items-start
+  mobile:flex-col 
+  mobile:items-start
+}
+
+.hours-brand {
+  @apply
+  flex 
+  justify-between 
+  items-center 
+  tablet:ml-auto 
+  tablet:mb-3
+  mobile:ml-auto 
+  mobile:mb-3
+}
+
+.opt-brand {
+  @apply
+  tablet:ml-auto 
+  tablet:mb-3
+  mobile:ml-auto 
+  mobile:mb-3
+}
+
+.info-brand {
+  @apply
+  flex 
+  justify-between 
+  items-start 
+  tablet:flex-col
+  mobile:flex-col
+}
+
+.flights-details {
+  @apply
+  flex 
+  flex-col 
+  justify-between 
+  tablet:flex-row 
+  tablet:items-center 
+  tablet:justify-between 
+  tablet:mb-3 
+  mobile:flex-row 
+  mobile:items-center 
+  mobile:justify-between
+}
+
+.flights-name {
+  @apply
+  flex 
+  flex-col 
+  justify-between 
+  tablet:w-full 
+  tablet:flex-row 
+  tablet:justify-between 
+  tablet:mb-3 
+  mobile:w-full 
+  mobile:flex-row 
+  mobile:justify-between 
+  mobile:mb-3
+}

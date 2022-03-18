@@ -494,6 +494,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   visibility: hidden;
 }
 
+.fixed {
+  position: fixed;
+}
+
 .absolute {
   position: absolute;
 }
@@ -713,6 +717,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .justify-between {
   justify-content: space-between;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
 }
 
 .rounded-md {

@@ -17,8 +17,8 @@
 
 <body>
   <!-- Header -->
-  <header>
-    <div class="container mx-auto absolute top-0 left-0 right-0 mobile:px-4 laptop:mx-auto">
+  <header class="fixed top-0 right-0 left-0 z-10">
+    <div class="container mx-auto mobile:px-4 laptop:mx-auto">
       <div class="flex justify-between items-center">
         <!-- Logo -->
         <div class="z-50 py-10">
@@ -42,7 +42,7 @@
         <div class="flex">
           <ul id="menu" class="menu-list invisible">
             <li class="py-12 tablet:py-6 mobile:py-4 px-5"><a class="nav-list" href="#">Promotion</a></li>
-            <li class="py-12 tablet:py-6 mobile:py-4 px-5"><a class="nav-list" href="#">Flight Schedule</a></li>
+            <li id="btn-flight" class="py-12 tablet:py-6 mobile:py-4 px-5"><a class="nav-list" href="#">Flight Schedule</a></li>
             <li class="py-12 tablet:py-6 mobile:py-4 px-5"><a class="nav-list" href="#">About Us</a></li>
             <li class="py-12 tablet:py-6 mobile:py-4 px-5"><a class="nav-list" href="#">Payment Guide</a></li>
           </ul>
@@ -84,17 +84,17 @@
               <label class="font-semibold">Multi-city</label>
             </form>
             <form action="">
-              <select class="font-semibold" id="">
-                <option>02 Adult, 01 Children</option>
-                <option>02 Adult, 0 Children</option>
-                <option>02 Adult</option>
+              <select class="font-semibold" id="people">
+                <option value="02 Adult, 01 Children">02 Adult, 01 Children</option>
+                <option value="02 Adult, 0 Children">02 Adult, 0 Children</option>
+                <option value="02 Adult">02 Adult</option>
               </select>
             </form>
             <form action="">
-              <select class="font-semibold" id="">
-                <option>Business Class</option>
-                <option>Economy Class</option>
-                <option>Premium Class</option>
+              <select class="font-semibold" id="option-chair">
+                <option value="Business Class">Business Class</option>
+                <option value="Economy Class">Economy Class</option>
+                <option value="Premium Class">Premium Class</option>
               </select>
             </form>
           </div>
@@ -104,14 +104,14 @@
             <!-- From -->
             <div class="w-1/4 tablet:w-2/5 mobile:w-full mobile:mb-4 mobile:mr-0 border-2 rounded-xl p-3 mr-4">
               <p class="text-xs text-gray-400 font-semibold">FROM</p>
-              <h3 class="text-2xl font-bold text-blue-600 my-1">Da Nang</h3>
+              <input id="from" type="text" class="text-2xl font-bold text-blue-600 my-1 w-full" value="Da Nang" />
               <p class="text-sm font-semibold">Quang Nam, Viet Nam</p>
             </div>
 
             <!-- To -->
             <div class="w-1/4 tablet:w-2/5 mobile:w-full mobile:mb-4 mobile:mr-0 border-2 rounded-xl p-3 mr-4">
               <p class="text-xs text-gray-400 font-semibold">TO</p>
-              <h3 class="text-2xl font-bold text-blue-600 my-1">Ho Chi Minh</h3>
+              <input id="to" type="text" class="text-2xl font-bold text-blue-600 my-1 w-full" value="Ho Chi Minh" />
               <p class="text-sm font-semibold">Viet Nam</p>
             </div>
 
@@ -120,7 +120,7 @@
               <!-- Departure -->
               <div class="mb-4">
                 <p class="text-xs text-gray-400 font-semibold">DEPARTURE</p>
-                <input class="text-2xl font-bold text-blue-600" type="date" name="" id="">
+                <input class="text-2xl font-bold text-blue-600" type="date" name="" id="day-from">
                 <div>
                   <button class="text-sm font-semibold underline mr-2">Prev</button>
                   <button class="text-sm text-gray-400 font-semibold">Next</button>
@@ -130,7 +130,7 @@
               <!-- Return -->
               <div class="mb-4">
                 <p class="text-xs text-gray-400 font-semibold">RETURN</p>
-                <input class="text-2xl font-bold text-blue-600" type="date" name="" id="">
+                <input class="text-2xl font-bold text-blue-600" type="date" name="" id="day-to">
                 <div>
                   <button class="text-sm text-gray-400 font-semibold mr-2">Prev</button>
                   <button class="text-sm text-gray-400 font-semibold">Next</button>
@@ -141,7 +141,7 @@
         </div>
 
         <div class="absolute -bottom-5 right-6">
-          <button class="btn-book">
+          <button id="btn-search" class="btn-book">
             Search Flights
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block ml-3" viewBox="0 0 20 20"
               fill="currentColor">
@@ -193,7 +193,7 @@
   <!-- Modal -->
   <section class="relative bg-white">
     <!-- Header -->
-    <div class="bg-blue-600">
+    <div class="bg-blue-600 invisible">
       <div class="container mx-auto flex justify-between items-center mobile:px-4">
         <!-- Logo -->
         <div>
@@ -230,8 +230,8 @@
           <div class="w-2/6 flex justify-between items-center tablet:w-1/2 mobile:w-full">
             <!-- From -->
             <div>
-              <h3 class="font-bold text-blue-600">Da Nang (DAD)</h3>
-              <p class="text-sm text-gray-500">Fri, 22 Mar, 2022</p>
+              <h3 id="render-from" class="font-bold text-blue-600"></h3>
+              <p id="render-day-go" class="text-sm text-gray-500"></p>
             </div>
 
             <p>
@@ -244,20 +244,16 @@
 
             <!-- To -->
             <div class="mobile:justify-end">
-              <h3 class="font-bold text-blue-600">Ho Chi Minh (SGN)</h3>
-              <p class="text-sm text-gray-500">Fri, 22 Mar, 2022</p>
+              <h3 id="render-to" class="font-bold text-blue-600"></h3>
+              <p id="render-day-to" class="text-sm text-gray-500"></p>
             </div>
           </div>
 
           <!-- Flights Info -->
           <div class="info-opt">
             <p class="font-semibold text-xs px-8 tablet:pl-0 mobile:pl-0">Round-trip</p>
-            <p
-              class="font-semibold text-xs px-8 tablet:pl-0 mobile:pl-0 tablet:border-0 mobile:border-0 border-l-2 border-r-2">
-              <span class="text-blue-600">02</span> Adult,
-              <span class="text-blue-600">01</span> children
-            </p>
-            <p class="font-semibold text-xs px-8 tablet:pl-0 mobile:pl-0">Business Class</p>
+            <p id="render-people" class="font-semibold text-xs px-8 tablet:pl-0 mobile:pl-0 tablet:border-0 mobile:border-0 border-l-2 border-r-2"></p>
+            <p id="render-chair" class="font-semibold text-xs px-8 tablet:pl-0 mobile:pl-0"></p>
           </div>
 
           <!-- Button change -->
@@ -388,22 +384,22 @@
                   <div class="flights-details">
                     <ul>
                       <li class="font-bold">21:40</li>
-                      <li class="text-xs">11 Feb</li>
+                      <li id="from-day" class="text-xs"></li>
                     </ul>
 
                     <p class="my-10 tablet:my-2">1h 30m</p>
 
                     <ul>
                       <li class="font-bold">21:40</li>
-                      <li class="text-xs">11 Feb</li>
+                      <li id="to-day" class="text-xs"></li>
                     </ul>
                   </div>
 
                   <div
                     class="flex flex-col justify-between tablet:w-full tablet:flex-row tablet:justify-between tablet:mb-3 mobile:w-full mobile:flex-row mobile:justify-between mobile:mb-3">
                     <ul>
-                      <li class="font-bold">Da nang (DAD)</li>
-                      <li>Da Nang Airport</li>
+                      <li id="from-ticket" class="font-bold"></li>
+                      <li id="from-station"></li>
                     </ul>
 
                     <p class="invisible tablet:visible mobile:visible">
@@ -415,8 +411,8 @@
                     </p>
 
                     <ul>
-                      <li class="font-bold">Ho Chi Minh (SGN)</li>
-                      <li>Tan Son Nhat Intl</li>
+                      <li id="to-ticket" class="font-bold"></li>
+                      <li id="to-station"></li>
                     </ul>
                   </div>
                 </div>
